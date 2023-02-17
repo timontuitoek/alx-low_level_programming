@@ -6,11 +6,12 @@
 /* betty style doc for function main goes there */
 /**
  * Main - main function
+ *Description- my project
  *
  * Return: 0 always
  */
 
-int main(void)
+int Main(void)
 {
 	int n;
 
@@ -22,7 +23,7 @@ int main(void)
 	else if (n == 0)
 		printf("%d is zerois", n);
 	else
-		printf(" is negative");
+		printf("%d is negative");
 	printf("\n");
 	return (0);
 }
