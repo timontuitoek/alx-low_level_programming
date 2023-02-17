@@ -4,9 +4,9 @@
 #include <stdio.h>
 /* comments */
 /**
- * Main - defining main function
+ * main - defining main function
  *
- * Return: 0successfully
+ * Return: 0 successfully
  */
 int main(void)
 {
