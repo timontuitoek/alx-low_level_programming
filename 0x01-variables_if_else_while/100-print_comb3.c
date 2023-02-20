@@ -1,30 +1,36 @@
 #include <stdio.h>
 /**
- * main - main function
+ * main - print all combinations of 2 digit numbers
  *
- * Return: 0 always
- *
+ * Return: 0 on success
  */
-
 int main(void)
 {
-	int a, b;
+	int q = '0';
+	int k = '0';
 
-	for (a = '0'; a < '9'; a++)
+	while (q <= '9')
 	{
-	for (b = a + 1; b <= '9'; b++)
-	{
-	if (b != a)
-{
-	      putchar(a);
-	      putchar(b);
-	if (a == '8' && b == '9')
-	continue;
-	 putchar(',');
-	 putchar(' ');
-}
+		while (k <= '9')
+		{
+			if (!(q > k || q == k))
+			{
+				putchar(q);
+				putchar(k);
+				if (q == '8' && k == '9')
+				{
+					putchar('\n');
+				}
+				else
+				{
+					putchar(',');
+					putchar(' ');
+				}
+			}
+			k++;
+		}
+		k = '0';
+		q++;
 	}
-	}
-	putchar('\n');
 	return (0);
 }
