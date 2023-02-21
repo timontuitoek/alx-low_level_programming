@@ -10,7 +10,6 @@
 
 int main(void)
 {
-	putchar(' ');
 	putchar('p');
 	putchar('u');
 	putchar('t');
