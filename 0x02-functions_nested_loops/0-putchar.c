@@ -1,11 +1,9 @@
-#include <stdio.h>
+#include <main.h>
 
-/*
- *Main -  entry point
+/**
+ * main - Entry point
  *
- *Description: prints the entry point
- *
- *Return: 0 successfully
+ * Return: always 0
  */
 
 int main(void)
