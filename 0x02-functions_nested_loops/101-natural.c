@@ -1,28 +1,22 @@
 #include <stdio.h>
 
 /**
- * main - Print first 50 Fibonacci numbers
+ * main - Print all multiples of 3 & 9 below 1024
  *
  * Return: Return 0
  */
 int main(void)
 {
-	long int f, s, sum, tot;
+	int n, sum;
 
-	sum = 0;
-	f = 0;
-	s = 1;
-	tot = 0;
-	while (sum < 4000000)
+	while (n < 1024)
 	{
-		sum = f + s;
-		if (sum % 2 == 0)
+		if ((n % 3) == 0 || (n % 5) == 0)
 		{
-			tot += sum;
+			sum += n;
 		}
-		f = s;
-		s = sum;
+		n++;
 	}
-	printf("%ld\n", tot);
+	printf("%d\n", sum);
 	return (0);
 }
