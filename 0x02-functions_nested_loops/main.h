@@ -1,23 +1,13 @@
-#include <stdio.h>
-
-/*
- *Main -  entry point
- *
- *Description: prints the entry point
- *
- *Return: 0 successfully
- */
-
-int main(void)
-{
-        putchar(' ');
-        putchar('p');
-        putchar('u');
-        putchar('t');
-        putchar('c');
-        putchar('h');
-        putchar('a');
-        putchar('r');
-        putchar('\n');
-        return (0);
-}
+int _putchar(char);
+void print_alphabet(void);
+void print_alphabet_x10(void);
+int _islower(int);
+int _isalpha(int);
+int print_sign(int);
+int _abs(int);
+int print_last_digit(int);
+void jack_bauer(void);
+void times_table(void);
+int add(int, int);
+void print_to_98(int);
+void print_times_table(int);
