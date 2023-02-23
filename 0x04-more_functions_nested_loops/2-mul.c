@@ -10,8 +10,5 @@
 
 int mul(int a, int b)
 {
-	int = a, b;
-
-	_putchar("%da * %db");
-	return (0);
+	return (a * b);
 }
