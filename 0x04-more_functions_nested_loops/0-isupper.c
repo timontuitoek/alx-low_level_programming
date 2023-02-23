@@ -5,15 +5,18 @@
  *
  *@c: integer to check code
  *
- * Return: 0 always
+ * Return: 1 if upper and 0 if lower
  */
 int _isupper(int c)
 {
-	c = 0;
+	c = '0';
 
-	if (c >= 65 && c <= 90)
+	if (!(c >= 65 && c <= 90))
 	{
-	return (1);
-	}
 	return (0);
+	}
+	else
+	{
+		return (1);
+	}
 }
