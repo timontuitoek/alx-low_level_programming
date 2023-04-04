@@ -3,7 +3,7 @@
 #include "lists.h"
 
 /**
- * free_listint2 - free's a listint_t list
+ * free_listint2 - free's a memory of each node
  * @head: pointer to head of list
  *
  * Return: NULL
