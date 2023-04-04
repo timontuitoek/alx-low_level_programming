@@ -18,11 +18,11 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 
 	/*check head if NULL*/
 	if (head == NULL || idx == 0)
-		return (add_nodeint_end(head, n));
+		return (add_nodeint(head, n));
 
 	/*traverse list until index is reached*/
 	current_node = *head;
-	for (k = 0; k < idx - 1 && current_node->next != NULL; k++)
+	for (k = 0; k < idx - 1 && current_node != NULL; k++)
 		current_node = current_node->next;
 
 	/*check index out of range*/
