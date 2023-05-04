@@ -1,4 +1,4 @@
-#ifdef MAAIN_H
+#ifdef MAIN_H
 #define MAIN_H
 
 int main(void);
