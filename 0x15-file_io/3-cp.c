@@ -12,10 +12,9 @@
  *
  * Return: 0
  */
-
 int main(int argc, char *argv[])
 {
-	int input_fdescriptor, output_fdescriptor, istatus, ostatus;
+	int input_fdes, output_fdes, istatus, ostatus;
 	char buf[MAXSIZE];
 	mode_t mode;
 
@@ -25,20 +24,20 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	input_fdescriptor = open(argv[1], O_RDONLY);
-	if (input_fdescriptor == -1)
+	input_fdes = open(argv[1], O_RDONLY);
+	if (input_fdes == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-	output_fdescriptor = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, mode);
-	if (output_fdescriptor == -1)
+	output_fdes = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, mode);
+	if (output_fdes == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
 	do {
-		istatus = read(input_fdescriptor, buf, MAXSIZE);
+		istatus = read(input_fdes, buf, MAXSIZE);
 		if (istatus == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
@@ -46,7 +45,7 @@ int main(int argc, char *argv[])
 		}
 		if (istatus > 0)
 		{
-			ostatus = write(output_fdescriptor, buf, (ssize_t) istatus);
+			ostatus = write(output_fdes, buf, (ssize_t) istatus);
 			if (ostatus == -1)
 			{
 				dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
@@ -54,16 +53,16 @@ int main(int argc, char *argv[])
 			}
 		}
 	} while (istatus > 0);
-	istatus = close(input_fdescriptor);
+	istatus = close(input_fdes);
 	if (istatus == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", input_fdescriptor);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", input_fdes);
 		exit(100);
 	}
-	ostatus = close(output_fdescriptor);
+	ostatus = close(output_fdes);
 	if (ostatus == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", output_fdescriptor);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", output_fdes);
 		exit(100);
 	}
 	return (0);
