@@ -11,29 +11,29 @@
  */
 void hash_table_print(const hash_table_t *htable)
 {
-    unsigned int index = 0;
-    hash_node_t *node;
-    int counter = 0;
+	unsigned int index = 0;
+	hash_node_t *node;
+	int counter = 0;
 
-    if (!htable)
-        return;
+	if (!htable)
+	return;
 
-    printf("{");
-    for (index = 0; index < htable->size; index++)
-    {
-        node = htable->array[index];
-        if (node)
-        {
-            while (node)
-            {
-                if (counter != 0)
-                    printf(", ");
-                printf("'%s': '%s'", node->key, node->value);
-                counter++;
-                node = node->next;
-            }
-        }
-    }
-    printf("}\n");
+	printf("{");
+	for (index = 0; index < htable->size; index++)
+	{
+	node = htable->array[index];
+	if (node)
+	{
+	while (node)
+	{
+	if (counter != 0)
+	printf(", ");
+	printf("'%s': '%s'", node->key, node->value);
+	counter++;
+	node = node->next;
+	}
+	}
+	}
+	printf("}\n");
 }
 
