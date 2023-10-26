@@ -1,6 +1,7 @@
 <html>
 <head>
 <title>Makefiles</title>
+
 <h1>why makfile exists</h1>
 <p>Makefiles are used to help decide which parts of a large program need to be recompiled. In the vast majority of cases, C or C++ files are compiled.</p>
 <p>There are a variety of implementations of Make, but most of this guide will work on whatever version you're using. However, it's specifically written for GNU Make, which is the standard implementation on Linux and MacOS. All the examples work for Make versions 3 and 4, which are nearly equivalent other than some esoteric differences.</p>
