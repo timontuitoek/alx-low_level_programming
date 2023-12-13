@@ -8,7 +8,6 @@
  *
  * Return: Index of the first occurrence of value in the array, or -1 if not found
  */
-
 int linear_search(int *array, size_t size, int value)
 {
     size_t i = 0;
