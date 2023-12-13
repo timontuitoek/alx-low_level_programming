@@ -1,6 +1,5 @@
 #include "search_algos.h"
 #include <stdio.h>
-
 /**
  * print_array - Prints an array of integers
  * @array: Pointer to the first element of the array
