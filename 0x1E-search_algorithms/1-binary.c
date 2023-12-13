@@ -1,10 +1,13 @@
-#include "search_algos.h"
 #include <stdio.h>
+#include "search_algos.h"
+
 /**
- * print_array - Prints an array of integers
- * @array: Pointer to the first element of the array
- * @left: Starting index to print from
- * @right: Ending index to print until
+ * print_search_array - prints the array slice being searched
+ * @array: pointer to the array
+ * @start: starting index of the array slice
+ * @end: ending index of the array slice
+ *
+ * This function simulates the array slice being searched.
  */
 void print_search_array(int *array, size_t start, size_t end)
 {
