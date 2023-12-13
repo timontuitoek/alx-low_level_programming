@@ -1,5 +1,5 @@
 #include "search_algos.h"
-#include <stdio.h>
+
 /**
  * linear_search - Searches for a value in an array using linear search algorithm
  * @array: Pointer to the first element of the array to search in
@@ -8,6 +8,7 @@
  *
  * Return: Index of the first occurrence of value in the array, or -1 if not found
  */
+
 int linear_search(int *array, size_t size, int value)
 {
     size_t i;
