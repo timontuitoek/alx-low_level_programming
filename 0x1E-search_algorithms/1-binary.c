@@ -7,51 +7,60 @@
  * @left: Starting index to print from
  * @right: Ending index to print until
  */
-void print_array(int *array, size_t left, size_t right)
+void print_search_array(int *array, size_t start, size_t end)
 {
-	size_t i;
 	printf("Searching in array: ");
-	for (i = left; i <= right; i++)
+
+	while (start <= end)
 	{
-		printf("%d", array[i]);
-		if (i < right)
+		printf("%d", array[start]);
+
+		if (start != end)
 			printf(", ");
+		else
+			printf("\n");
+		start++;
 	}
-	printf("\n");
 }
 
 /**
- * binary_search - Searches for a value in a sorted array using binary search
- * @array: Pointer to the first element of the array to search in
- * @size: Number of elements in the array
- * @value: Value to search for
+ * binary_search - searches for a value in a sorted array of integers
+ * using binary search algorithm
+ * @array: pointer to first element of the array
+ * @size: number of elements in array
+ * @value: value to search for
  *
- * Return: Index of the value in the array, or -1 if not found
+ * Return: value index otherwise -1
  */
 int binary_search(int *array, size_t size, int value)
 {
+	size_t start = 0;
+	size_t end = size - 1;
+	size_t mid;
+
 	if (array == NULL)
-		return -1;
-
-	size_t left, right, mid;
-
-	left = 0;
-	right = size - 1;
-
-	while (left <= right)
 	{
-		mid = left + (right - left) / 2;
-
-		print_array(array, left, right);
-
-		if (array[mid] == value)
-			return mid;
-
-		if (array[mid] < value)
-			left = mid + 1;
-		else
-			right = mid - 1;
+		return (-1);
 	}
 
-	return -1; /* Value not found */
+	while (start <= end)
+	{
+		mid = start + (end - start) / 2;
+		print_search_array(array, start, end);
+
+		if (array[mid] == value)
+		{
+			return (mid);
+		}
+		else if (array[mid] < value)
+		{
+			start = mid + 1;
+		}
+		else
+		{
+			end = mid - 1;
+		}
+	}
+
+	return (-1);
 }
